@@ -31,36 +31,38 @@ int main()
 	if(a == 0)
 	{
 		printf("It is not quadratic\n");
-		return 0;
-	}
-	
-	D = pow(b, 2) - (4*a*c);
-	
-	x1 = ((-b) + sqrt(D)) / (2*a);
-	
-	x2 = ((-b) - sqrt(D)) / (2*a);
-	
-	
-	
-	if(D == 0)
-	{
-		printf("\nThe discriminat of the polynomial is %0.3lf \n", D);
-		printf("one real root\n");
-	}
-	else if( D < 0)
-	{
-		printf("\nThe discriminat of the polynomial is %0.3lf \n", D);
-		printf("imaginary roots\n");
 	}
 	else
 	{
-		printf("The discriminat of the polynomial is %0.3lf \n", D);
-		//printf("The root(s) of %0.3lfx^2 + %0.3lfx + %0.3lf is :\n", a, b, c);
-		printf("x1 = %6.3lf\n" , x1);
-		printf("x2 = %6.3lf\n" , x2);
+		
+	
+		D = pow(b, 2) - (4*a*c);
+		
+		x1 = ((-b) + sqrt(D)) / (2*a);
+		
+		x2 = ((-b) - sqrt(D)) / (2*a);
+		
+	
+	
+		if(D == 0)
+		{
+			printf("\nThe discriminat of the polynomial is %0.3lf \n", D);
+			printf("one real root\n");
+		}
+		else if( D < 0)
+		{
+			printf("\nThe discriminat of the polynomial is %0.3lf \n", D);
+			printf("imaginary roots\n");
+		}
+		else
+		{
+			printf("The discriminat of the polynomial is %0.3lf \n", D);
+			//printf("The root(s) of %0.3lfx^2 + %0.3lfx + %0.3lf is :\n", a, b, c);
+			printf("x1 = %6.3lf\n" , x1);
+			printf("x2 = %6.3lf\n" , x2);
+		}
+	
 	}
-	
-	
 	
 	return 0;
 }

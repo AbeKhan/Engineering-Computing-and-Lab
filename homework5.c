@@ -29,19 +29,16 @@ int main()
     printf("Enter c : ");
     scanf("%lf", &c);
 
-    if (a == 0 && b == 0)
+    if (a == 0)
     {
+		if(b==0)
+		{
         printf("It's not an equation\n");
-        exit(0);
+		}
+        
     }
-    else if (a == 0 && b != 0)
-    {
-        double x = (-c) / b;
-        printf("It is not quadratic\n");
-        printf("\nx = %lf \n", x);
-        exit(0);
-    }
-    else if (a != 0)
+    
+    else
     {
         D = pow(b, 2) - (4 * a * c);
 
