@@ -1,6 +1,6 @@
 /*
         3/30/2025
-        Program Name: homework6.c
+        Program Name: homework7.c
         Name        : Abraham Khan
 
         This program is designed to solve the homework
@@ -21,11 +21,39 @@ int main()
     double maxA, minA, maxB, minB, sum, subscript;
     char end, vector;
 
+    printf("A={");
+    for (int i = 0; i < SIZE; i++)
+    {
+        printf("%0.2lf ", A[i]);
+        if (i != SIZE - 1)
+        {
+            printf(", ");
+        }
+        else
+        {
+            printf("}\n");
+        }
+    }
+    printf("B={");
+    for (int i = 0; i < SIZE; i++)
+    {
+        printf("%0.2lf ", B[i]);
+        if (i != SIZE - 1)
+        {
+            printf(", ");
+        }
+        else
+        {
+            printf("}\n");
+        }
+    }
+
     while (!exit)
     {
-        printf("Please choose a process : \n");
-        printf("1. Max calue and min value of A \n");
-        printf("2. Max calue and min value of B\n");
+
+        printf("\nPlease choose a process : \n");
+        printf("1. Max value and min value of A \n");
+        printf("2. Max value and min value of B\n");
         printf("3. Dot product of A and B\n");
         printf("4. The value of know subscript\n");
         printf("5. Exit\n");
@@ -51,7 +79,7 @@ int main()
             printf("Max value of A is %0.2lf\n", maxA);
             printf("Min value of A is %0.2lf\n", minA);
             printf("Do you want another process (Y or N)? ");
-            scanf(" %c", &exit);
+            scanf(" %c", &end);
             if (end == 'N' || end == 'n')
             {
                 exit = 1;
@@ -74,7 +102,7 @@ int main()
             printf("Max value of B is %0.2lf\n", maxB);
             printf("Min value of B is %0.2lf\n", minB);
             printf("Do you want another process (Y or N)? ");
-            scanf(" %c", &exit);
+            scanf(" %c", &end);
             if (end == 'N' || end == 'n')
             {
                 exit = 1;
@@ -88,50 +116,69 @@ int main()
             }
             printf("Dot product of A and B is %0.2lf\n", sum);
             printf("Do you want another process (Y or N)? ");
-            scanf(" %c", &exit);
+            scanf(" %c", &end);
             if (end == 'N' || end == 'n')
             {
                 exit = 1;
             }
             break;
         case 4:
-            printf("Which vector (A or B) ?");
-            scanf("%c", &vector);
-
-            printf("Please enter a subscript (0-4): ");
-            scanf("%lf", &subscript);
-            if (subscript < 0 || subscript >= SIZE)
+            printf("Which vector (A or B) ?\n");
+            scanf(" %c", &vector);
+            int check = 0;
+            while (check == 0)
             {
-                printf("Please enter a subscript (0-4): ");
-                scanf("%lf", &subscript);
-            }
-            else
-            {
-                if(vector == 'A' || vector == 'a')
+                if ((vector == 'a' || vector == 'A') || (vector == 'b' || vector == 'B'))
                 {
-                    printf("A[%0.2lf] = %0.2lf\n", subscript, A[(int)subscript]);
-                }
-                else if(vector == 'B' || vector == 'b')
-                {
-                    printf("B[%0.2lf] = %0.2lf\n", subscript, B[(int)subscript]);
+                    check = 1;
                 }
                 else
                 {
-                    printf("Invalid vector\n");
+                    printf("Please choose (A or B): \n");
+                    scanf(" %c", &vector);
                 }
             }
+
+            printf("Please enter a subscript (0-4):");
+            scanf("%lf", &subscript);
+            while (subscript < 0 || subscript >= SIZE)
+            {
+                printf("Please enter a subscript (0-4): \n");
+                scanf("%lf", &subscript);
+            }
+            if (vector == 'A' || vector == 'a')
+
+            {
+                printf("A[%lf] = %0.2lf\n", subscript, A[(int)subscript]);
+            }
+            else if (vector == 'B' || vector == 'b')
+            {
+                printf("B[%lf] = %0.2lf\n", subscript, B[(int)subscript]);
+            }
+            else
+            {
+                printf("Invalid vector\n");
+            }
+
             printf("Do you want another process (Y or N)? ");
-            scanf(" %c", &exit);
+            scanf(" %c", &end);
             if (end == 'N' || end == 'n')
             {
                 exit = 1;
             }
             break;
         case 5:
+            printf("BYE!\n");
             exit = 1;
             break;
         default:
-            printf("Invalid choice\n");
+            printf("Not a choice\n");
+            printf("Do you want another process (Y or N)? ");
+            scanf(" %c", &end);
+            if (end == 'N' || end == 'n')
+            {
+                exit = 1;
+            }
             break;
         }
     }
