@@ -15,7 +15,6 @@ int main()
 		{
 			printf("A[%d][%d]	: ",i, j);
 			scanf("%d", &A[i][j]);
-			
 		}
 		
 	printf("Enter matrix B	: \n");
@@ -24,7 +23,6 @@ int main()
 		{
 			printf("B[%d][%d]	: ",i, j);
 			scanf("%d", &B[i][j]);
-			
 		}
 		
 		do{
