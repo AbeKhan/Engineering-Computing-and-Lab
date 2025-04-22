@@ -4,19 +4,20 @@
 #define NROWS 3
 #define NCOLS 3
 #define N 3
-
+#define V 11
 #include "function11.h"
 
 int main()
 {
     int exit = 0;
-    int choice, A[NROWS][NCOLS], B[NROWS][NCOLS], C[NROWS][NCOLS];
+    int choice = 0;
+    int A[NROWS][NCOLS], B[NROWS][NCOLS], C[NROWS][NCOLS], vectora[V], vectorb[V];
     FILE *fp;
 
     fp = fopen("mata.txt", "r");
     if (fp == NULL)
     {
-        printf("Error opening file!\n");
+        printf("Error opening file! 1\n");
         return 1;
     }
     else
@@ -34,7 +35,7 @@ int main()
     fp = fopen("matb.txt", "r");
     if (fp == NULL)
     {
-        printf("Error opening file!\n");
+        printf("Error opening file! 2\n");
         return 1;
     }
     else
@@ -45,6 +46,36 @@ int main()
             {
                 fscanf(fp, "%d", &B[i][j]);
             }
+        }
+        fclose(fp);
+    }
+
+    fp = fopen("vecta.txt", "r");
+    if (fp == NULL)
+    {
+        printf("Error opening file! 3\n");
+        return 1;
+    }
+    else
+    {
+        for (int i = 0; i < V; i++)
+        {
+            fscanf(fp, "%d", &vectora[i]);
+        }
+        fclose(fp);
+    }
+
+    fp = fopen("vectb.txt", "r");
+    if (fp == NULL)
+    {
+        printf("Error opening file! 4\n");
+        return 1;
+    }
+    else
+    {
+        for (int i = 0; i < V; i++)
+        {
+            fscanf(fp, "%d", &vectorb[i]);
         }
         fclose(fp);
     }
@@ -71,20 +102,20 @@ int main()
             transpose(A, C);
             break;
         case 2:
-            dot_product(A, B, N);
+            dot_product(vectora, vectorb, N);
             break;
         case 3:
-            addition(A, B, C);
+            add(A, B, C);
             break;
         case 4:
-            subtraction(A, B, C);
+            sub(A, B, C);
             break;
         case 5:
-            multiplication(A, B, C);
+            matrix_mult(A, B, C);
             break;
         case 6:
-            determinant(A);
-            determinant(B);
+            det3by3(A);
+            det3by3(B);
             break;
         case 7:
             exit = 1;

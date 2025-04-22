@@ -94,6 +94,7 @@ int dot_product(int a[],int b[],int n)
   return sum;
 }
 
+
 int det3by3(int a[N][N])
 {
    int k;
@@ -161,3 +162,6 @@ void matrix_mult(int a[N][N],int b[N][N],int c[N][N])
 			  c[i][j] += a[i][k]*b[k][j];
 	   }		   
 }
+
+
+
