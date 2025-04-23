@@ -1,7 +1,7 @@
 //function.h
 
 /*** FUNCTIONS FOR MATRICES ***/
-
+/*
 int dot_product(int a[],int b[],int n)
 {
   int k;
@@ -12,7 +12,18 @@ int dot_product(int a[],int b[],int n)
 	 
   return sum;
 }
-
+*/
+double dot_product(double a[],double b[],int n)
+{
+  int k;
+  double sum=0;
+  
+  for (k=0;k<n;k++)
+     sum+= a[k]*b[k];
+	 
+  return sum;
+}
+/*
 int det3by3(int a[N][N])
 {
    int k;
@@ -82,6 +93,7 @@ void matrix_mult(int a[N][N],int b[N][N],int c[N][N])
 }
 
 /* SORTING */
+/*
 void sort(double x[],int n)
 {
   int k,j,m;
@@ -99,3 +111,5 @@ void sort(double x[],int n)
   }
   return;
 }
+
+*/
