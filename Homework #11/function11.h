@@ -90,14 +90,13 @@ int dot_product(int a[],int b[],int n)
   
   for (k=0;k<n;k++)
      sum+= a[k]*b[k];
-	 
+	  //sum -= 100;
   return sum;
 }
 
 
 int det3by3(int a[N][N])
 {
-   int k;
    int sum;
    
    sum=(a[0][0]*a[1][1]*a[2][2])+(a[0][1]*a[1][2]*a[2][0])+(a[0][2]*a[1][0]*a[2][1])-(a[2][0]*a[1][1]*a[0][2])-(a[2][1]*a[1][2]*a[0][0])-(a[2][2]*a[1][0]*a[0][1]);

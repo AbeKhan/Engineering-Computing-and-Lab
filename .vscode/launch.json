@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/cygwin64/home/abrah/Engineering-Computing-and-Lab",
-      "program": "c:/cygwin64/home/abrah/Engineering-Computing-and-Lab/build/Debug/outDebug",
+      "cwd": "c:/cygwin64/home/abrah/Engineering-Computing-and-Lab/Homework #11 attached files Apr 16, 2025 1254 PM",
+      "program": "c:/cygwin64/home/abrah/Engineering-Computing-and-Lab/Homework #11 attached files Apr 16, 2025 1254 PM/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
